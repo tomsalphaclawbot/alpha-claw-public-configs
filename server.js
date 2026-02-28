@@ -6,6 +6,7 @@ const app = express();
 const port = process.env.PORT || 8080;
 
 const snapshotsRoot = path.join(__dirname, 'snapshots');
+const PUBLIC_REPO_URL = 'https://github.com/tomsalphaclawbot/alpha-claw-public-configs';
 
 function safeReadJson(filePath) {
   try {
@@ -53,6 +54,10 @@ app.use('/snapshots', express.static(path.join(__dirname, 'snapshots')));
 
 app.get('/health', (_req, res) => {
   res.json({ status: 'ok', service: 'alpha-claw-public-configs' });
+});
+
+app.get('/repo', (_req, res) => {
+  res.redirect(302, PUBLIC_REPO_URL);
 });
 
 app.get('/api/snapshots', (_req, res) => {
