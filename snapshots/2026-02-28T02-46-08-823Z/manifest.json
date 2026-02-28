@@ -1,0 +1,734 @@
+{
+  "snapshotId": "2026-02-28T02-46-08-823Z",
+  "generatedAt": "2026-02-28T02:46:08.824Z",
+  "sourceRoots": {
+    "workspace": "/Users/openclaw/.openclaw/workspace",
+    "config": "/Users/openclaw/.openclaw"
+  },
+  "policy": {
+    "include": {
+      "workspaceFiles": [
+        "AGENTS.md",
+        "SOUL.md",
+        "IDENTITY.md",
+        "USER.md",
+        "TOOLS.md",
+        "HEARTBEAT.md",
+        "README.md",
+        "ARCHITECTURE.md",
+        "PROJECTS.md",
+        "BEADS.md",
+        "CONSTITUTION.md"
+      ],
+      "workspaceDirs": [
+        "docs/**",
+        "instructions/**",
+        "skills/*/SKILL.md"
+      ],
+      "workspaceScripts": [
+        "scripts/heartbeat-enforce.sh",
+        "scripts/heartbeat-holistic.sh",
+        "scripts/subagent-dispatcher.sh",
+        "scripts/subagent-stall-watch.sh",
+        "scripts/subagent-global-status.sh",
+        "scripts/subagent-status-read.sh",
+        "scripts/proactive-notify-guard.sh",
+        "scripts/proactive-thread-target.sh",
+        "scripts/conversation-activity-refresh.sh",
+        "scripts/gateway-selfheal.sh",
+        "scripts/openclaw-watchdog.sh",
+        "scripts/beads-ui-ensure.sh",
+        "scripts/beads-viewer-refresh.sh",
+        "scripts/beads-viewer-serve.sh",
+        "scripts/daily-full-sync.sh"
+      ],
+      "configFiles": [
+        "README.md",
+        "completions/openclaw.bash",
+        "completions/openclaw.zsh",
+        "completions/openclaw.fish",
+        "completions/openclaw.ps1"
+      ],
+      "configWorkspaceDocs": [
+        "workspace-claude/AGENTS.md",
+        "workspace-claude/SOUL.md",
+        "workspace-claude/IDENTITY.md",
+        "workspace-claude/USER.md",
+        "workspace-claude/TOOLS.md",
+        "workspace-codex/AGENTS.md",
+        "workspace-codex/SOUL.md",
+        "workspace-codex/IDENTITY.md",
+        "workspace-codex/USER.md",
+        "workspace-codex/TOOLS.md"
+      ]
+    },
+    "exclude": [
+      "memory/**",
+      "state/**",
+      "logs/**",
+      "transcripts/**",
+      "sessions/**",
+      ".git/**",
+      "node_modules/**",
+      "credentials/**"
+    ],
+    "redaction": [
+      "emails",
+      "phone-like numbers",
+      "chat/id-like long numbers",
+      "token/secret/password assignment values"
+    ]
+  },
+  "files": [
+    {
+      "path": "config/completions/openclaw.bash",
+      "source": "config",
+      "sha256": "36171436765c4bc312ad399a36d565c35568c82b52fb19829fb5abbefed648a1",
+      "bytes": 9710,
+      "redactions": {
+        "emails": 0,
+        "phones": 0,
+        "ids": 0,
+        "secrets": 0
+      }
+    },
+    {
+      "path": "config/completions/openclaw.fish",
+      "source": "config",
+      "sha256": "bc6624da0ea65114a36e9af34cdb86f53dccb2f873ce8bb2324aec0146bc4c95",
+      "bytes": 190771,
+      "redactions": {
+        "emails": 0,
+        "phones": 0,
+        "ids": 0,
+        "secrets": 0
+      }
+    },
+    {
+      "path": "config/completions/openclaw.ps1",
+      "source": "config",
+      "sha256": "88293af1f3011ea36315b787f571c4a17a19898f270061191777af0f530d656d",
+      "bytes": 116250,
+      "redactions": {
+        "emails": 0,
+        "phones": 0,
+        "ids": 0,
+        "secrets": 0
+      }
+    },
+    {
+      "path": "config/completions/openclaw.zsh",
+      "source": "config",
+      "sha256": "aa559ba5d8fbcc66e5d4287284bc5487e880e009d2c625608aca7b1ea1dbcf22",
+      "bytes": 133477,
+      "redactions": {
+        "emails": 0,
+        "phones": 0,
+        "ids": 0,
+        "secrets": 0
+      }
+    },
+    {
+      "path": "config/README.md",
+      "source": "config",
+      "sha256": "8a47b9105b62ad957d0f59697019fce1bca8b28df1305e7959a1b22f561456ab",
+      "bytes": 6618,
+      "redactions": {
+        "emails": 2,
+        "phones": 0,
+        "ids": 0,
+        "secrets": 0
+      }
+    },
+    {
+      "path": "config/workspace-claude/AGENTS.md",
+      "source": "config",
+      "sha256": "dab0ec095e76aaddca80c0fec997177a33283bae5d28d2ff4a565b9c96fa07ce",
+      "bytes": 7881,
+      "redactions": {
+        "emails": 0,
+        "phones": 2,
+        "ids": 0,
+        "secrets": 0
+      }
+    },
+    {
+      "path": "config/workspace-claude/IDENTITY.md",
+      "source": "config",
+      "sha256": "1379f924cf4b4d6d0a306ecc2544a913dab706a1325fcf8eb9b267686ee8551c",
+      "bytes": 636,
+      "redactions": {
+        "emails": 0,
+        "phones": 0,
+        "ids": 0,
+        "secrets": 0
+      }
+    },
+    {
+      "path": "config/workspace-claude/SOUL.md",
+      "source": "config",
+      "sha256": "95c467f710183b2c0397c29ec4ef886bb723671a39ee767dc4d59165f723b68f",
+      "bytes": 1673,
+      "redactions": {
+        "emails": 0,
+        "phones": 0,
+        "ids": 0,
+        "secrets": 0
+      }
+    },
+    {
+      "path": "config/workspace-claude/TOOLS.md",
+      "source": "config",
+      "sha256": "ef9d4fc1e11c015db666c48ed2e2c58eedd2d31e6666fd9f8c67bd82362c0f65",
+      "bytes": 863,
+      "redactions": {
+        "emails": 0,
+        "phones": 1,
+        "ids": 0,
+        "secrets": 0
+      }
+    },
+    {
+      "path": "config/workspace-claude/USER.md",
+      "source": "config",
+      "sha256": "178a5807bd2e6ace25b80a366f0f7d8d3f354a47f577c4ab0092397456b8738f",
+      "bytes": 477,
+      "redactions": {
+        "emails": 0,
+        "phones": 0,
+        "ids": 0,
+        "secrets": 0
+      }
+    },
+    {
+      "path": "config/workspace-codex/AGENTS.md",
+      "source": "config",
+      "sha256": "dab0ec095e76aaddca80c0fec997177a33283bae5d28d2ff4a565b9c96fa07ce",
+      "bytes": 7881,
+      "redactions": {
+        "emails": 0,
+        "phones": 2,
+        "ids": 0,
+        "secrets": 0
+      }
+    },
+    {
+      "path": "config/workspace-codex/IDENTITY.md",
+      "source": "config",
+      "sha256": "1379f924cf4b4d6d0a306ecc2544a913dab706a1325fcf8eb9b267686ee8551c",
+      "bytes": 636,
+      "redactions": {
+        "emails": 0,
+        "phones": 0,
+        "ids": 0,
+        "secrets": 0
+      }
+    },
+    {
+      "path": "config/workspace-codex/SOUL.md",
+      "source": "config",
+      "sha256": "95c467f710183b2c0397c29ec4ef886bb723671a39ee767dc4d59165f723b68f",
+      "bytes": 1673,
+      "redactions": {
+        "emails": 0,
+        "phones": 0,
+        "ids": 0,
+        "secrets": 0
+      }
+    },
+    {
+      "path": "config/workspace-codex/TOOLS.md",
+      "source": "config",
+      "sha256": "ef9d4fc1e11c015db666c48ed2e2c58eedd2d31e6666fd9f8c67bd82362c0f65",
+      "bytes": 863,
+      "redactions": {
+        "emails": 0,
+        "phones": 1,
+        "ids": 0,
+        "secrets": 0
+      }
+    },
+    {
+      "path": "config/workspace-codex/USER.md",
+      "source": "config",
+      "sha256": "178a5807bd2e6ace25b80a366f0f7d8d3f354a47f577c4ab0092397456b8738f",
+      "bytes": 477,
+      "redactions": {
+        "emails": 0,
+        "phones": 0,
+        "ids": 0,
+        "secrets": 0
+      }
+    },
+    {
+      "path": "workspace/AGENTS.md",
+      "source": "workspace",
+      "sha256": "c3bcec3b1957df912c92e903fd677c92f2f1ff111b14eb62357d7ec7b5adb37b",
+      "bytes": 34544,
+      "redactions": {
+        "emails": 0,
+        "phones": 2,
+        "ids": 0,
+        "secrets": 0
+      }
+    },
+    {
+      "path": "workspace/ARCHITECTURE.md",
+      "source": "workspace",
+      "sha256": "0ac88a230f2b8571ab3ad95d5451fbb28a90c228e082b3c836d9d4b09c4e629d",
+      "bytes": 10581,
+      "redactions": {
+        "emails": 0,
+        "phones": 0,
+        "ids": 0,
+        "secrets": 0
+      }
+    },
+    {
+      "path": "workspace/BEADS.md",
+      "source": "workspace",
+      "sha256": "4c9b11d46890219ab020aaf9660fe5e6f4ee1f3fdff7010beaa8e5b06e5ef94f",
+      "bytes": 3265,
+      "redactions": {
+        "emails": 0,
+        "phones": 0,
+        "ids": 0,
+        "secrets": 0
+      }
+    },
+    {
+      "path": "workspace/CONSTITUTION.md",
+      "source": "workspace",
+      "sha256": "dc223ec0b73384e7ddc293092636f51e8120e7ad858450dfec9681f643051e3b",
+      "bytes": 2488,
+      "redactions": {
+        "emails": 0,
+        "phones": 0,
+        "ids": 0,
+        "secrets": 0
+      }
+    },
+    {
+      "path": "workspace/docs/claude-chrome-relay-runbook.md",
+      "source": "workspace",
+      "sha256": "c57bdee3225a9bb1f188be1aae60383414b5086b17e64269e380da70b0128f86",
+      "bytes": 1429,
+      "redactions": {
+        "emails": 0,
+        "phones": 0,
+        "ids": 0,
+        "secrets": 0
+      }
+    },
+    {
+      "path": "workspace/docs/claude-remote-control-setup.md",
+      "source": "workspace",
+      "sha256": "c86f877804e121fc062bc47cdeee0ded4e85035d8c90d229dc8f71e4d1f1392b",
+      "bytes": 1526,
+      "redactions": {
+        "emails": 0,
+        "phones": 1,
+        "ids": 0,
+        "secrets": 0
+      }
+    },
+    {
+      "path": "workspace/docs/EMAIL_PASSWORD_SETUP.md",
+      "source": "workspace",
+      "sha256": "85b67f6dc295d7a6010baf52a39602b85f6bed271df911ce7a555dba2e7ac271",
+      "bytes": 1588,
+      "redactions": {
+        "emails": 3,
+        "phones": 0,
+        "ids": 0,
+        "secrets": 2
+      }
+    },
+    {
+      "path": "workspace/docs/memory-system-improvements-plan.md",
+      "source": "workspace",
+      "sha256": "afc647c6d696e450c228e448f6d245103f4267648a78b56ac5de823a05540e35",
+      "bytes": 3688,
+      "redactions": {
+        "emails": 0,
+        "phones": 0,
+        "ids": 0,
+        "secrets": 0
+      }
+    },
+    {
+      "path": "workspace/docs/playbooks/voice-ai-playbook-update-2026-02.md",
+      "source": "workspace",
+      "sha256": "45869a6e3f8f7c91b6498d056a4bcdef72173e8566bb9368fbd5c5f17721d212",
+      "bytes": 7551,
+      "redactions": {
+        "emails": 0,
+        "phones": 0,
+        "ids": 0,
+        "secrets": 0
+      }
+    },
+    {
+      "path": "workspace/docs/SKILL_INSTALL_GATE.md",
+      "source": "workspace",
+      "sha256": "b676f79a503c1a3de6f823f983e17d96c720561ed741af69267c2ae79cf32b59",
+      "bytes": 1442,
+      "redactions": {
+        "emails": 0,
+        "phones": 0,
+        "ids": 0,
+        "secrets": 0
+      }
+    },
+    {
+      "path": "workspace/HEARTBEAT.md",
+      "source": "workspace",
+      "sha256": "6461d9f7e4ca56c6327141789b099fd378800d463f99e8165b26716bf4289ba8",
+      "bytes": 11436,
+      "redactions": {
+        "emails": 0,
+        "phones": 1,
+        "ids": 0,
+        "secrets": 0
+      }
+    },
+    {
+      "path": "workspace/IDENTITY.md",
+      "source": "workspace",
+      "sha256": "312c27f5c87618b046d82ea67199a1964637433f916fc3e9fe0c1ad537381e74",
+      "bytes": 1728,
+      "redactions": {
+        "emails": 3,
+        "phones": 0,
+        "ids": 0,
+        "secrets": 0
+      }
+    },
+    {
+      "path": "workspace/instructions/COMMUNICATION_POLICY.md",
+      "source": "workspace",
+      "sha256": "3761eda436de8129fceec69367ba1ab83574b307b73ee5f633c9053ada6650f7",
+      "bytes": 655,
+      "redactions": {
+        "emails": 0,
+        "phones": 0,
+        "ids": 0,
+        "secrets": 0
+      }
+    },
+    {
+      "path": "workspace/instructions/RESEARCH_TOOLING.md",
+      "source": "workspace",
+      "sha256": "f2b102ab28b685d0d069d6461b3d41fd464fdc54a247b032f87bf70adfdf1b72",
+      "bytes": 748,
+      "redactions": {
+        "emails": 0,
+        "phones": 0,
+        "ids": 0,
+        "secrets": 0
+      }
+    },
+    {
+      "path": "workspace/PROJECTS.md",
+      "source": "workspace",
+      "sha256": "c9180eb3797194ee73429b3336e056a8d3ce03814bbafc4c4e22fa49543ec233",
+      "bytes": 5803,
+      "redactions": {
+        "emails": 0,
+        "phones": 0,
+        "ids": 0,
+        "secrets": 0
+      }
+    },
+    {
+      "path": "workspace/README.md",
+      "source": "workspace",
+      "sha256": "4103a78790fab8a49f5e6852e75eab278ac87092b0d1e8e024f32cca9ae0551b",
+      "bytes": 7599,
+      "redactions": {
+        "emails": 0,
+        "phones": 0,
+        "ids": 0,
+        "secrets": 0
+      }
+    },
+    {
+      "path": "workspace/scripts/beads-ui-ensure.sh",
+      "source": "workspace",
+      "sha256": "22e4a248d7b037de0eed66d1475d635e4793081f254fff0632aea563ce910a39",
+      "bytes": 461,
+      "redactions": {
+        "emails": 0,
+        "phones": 0,
+        "ids": 0,
+        "secrets": 0
+      }
+    },
+    {
+      "path": "workspace/scripts/beads-viewer-refresh.sh",
+      "source": "workspace",
+      "sha256": "cea4e40ed3236e18b880306159a79246e26c890890350904caf0ed0395aca05f",
+      "bytes": 324,
+      "redactions": {
+        "emails": 0,
+        "phones": 0,
+        "ids": 0,
+        "secrets": 0
+      }
+    },
+    {
+      "path": "workspace/scripts/beads-viewer-serve.sh",
+      "source": "workspace",
+      "sha256": "ec49f8e29d351273208a472a099642c86f485be39fa32c30c3ddc008aa7e7e08",
+      "bytes": 193,
+      "redactions": {
+        "emails": 0,
+        "phones": 0,
+        "ids": 0,
+        "secrets": 0
+      }
+    },
+    {
+      "path": "workspace/scripts/conversation-activity-refresh.sh",
+      "source": "workspace",
+      "sha256": "b238a4d3cb32c57cb64b1da4c35deccdc67dd17b5640a1df28b8c361fcaefdbb",
+      "bytes": 4346,
+      "redactions": {
+        "emails": 0,
+        "phones": 0,
+        "ids": 0,
+        "secrets": 0
+      }
+    },
+    {
+      "path": "workspace/scripts/daily-full-sync.sh",
+      "source": "workspace",
+      "sha256": "41f3b3b7e26f7be4eb1dad53092418e5bf80af86ca4862be61bcf281c3092ad2",
+      "bytes": 1383,
+      "redactions": {
+        "emails": 0,
+        "phones": 0,
+        "ids": 0,
+        "secrets": 0
+      }
+    },
+    {
+      "path": "workspace/scripts/gateway-selfheal.sh",
+      "source": "workspace",
+      "sha256": "581b8af95bda5a462ddc20eb5241da3b527f70441dcd13a6221cb938d8d71afe",
+      "bytes": 3533,
+      "redactions": {
+        "emails": 0,
+        "phones": 0,
+        "ids": 0,
+        "secrets": 0
+      }
+    },
+    {
+      "path": "workspace/scripts/heartbeat-enforce.sh",
+      "source": "workspace",
+      "sha256": "94f299df447171c157e3461b0f7fcb846c0a68edf69dd36216c24129d0428fd3",
+      "bytes": 6838,
+      "redactions": {
+        "emails": 0,
+        "phones": 0,
+        "ids": 0,
+        "secrets": 0
+      }
+    },
+    {
+      "path": "workspace/scripts/heartbeat-holistic.sh",
+      "source": "workspace",
+      "sha256": "e7e4c8bdfaf11430461c55b9f54876a3c7d1679a931de5c2818009ce2006fa5e",
+      "bytes": 5761,
+      "redactions": {
+        "emails": 0,
+        "phones": 0,
+        "ids": 0,
+        "secrets": 0
+      }
+    },
+    {
+      "path": "workspace/scripts/openclaw-watchdog.sh",
+      "source": "workspace",
+      "sha256": "2792315bafc3133951c49409445c0001d8d7aa876a852ff8e4240629d850af72",
+      "bytes": 1760,
+      "redactions": {
+        "emails": 0,
+        "phones": 0,
+        "ids": 0,
+        "secrets": 0
+      }
+    },
+    {
+      "path": "workspace/scripts/proactive-notify-guard.sh",
+      "source": "workspace",
+      "sha256": "84ddc002d9d7a4e1c59eda4334f74bd92e82d8e622e1d8b844283b7eb8b2c587",
+      "bytes": 3627,
+      "redactions": {
+        "emails": 0,
+        "phones": 0,
+        "ids": 0,
+        "secrets": 0
+      }
+    },
+    {
+      "path": "workspace/scripts/proactive-thread-target.sh",
+      "source": "workspace",
+      "sha256": "68d8b62ee2f1713f10fe78fe7d5b0702c2d96c2e5d07aecfcc1312209c863ccd",
+      "bytes": 432,
+      "redactions": {
+        "emails": 0,
+        "phones": 0,
+        "ids": 0,
+        "secrets": 0
+      }
+    },
+    {
+      "path": "workspace/scripts/subagent-dispatcher.sh",
+      "source": "workspace",
+      "sha256": "8fa897573923e7e3c902c2eecfadbe85a5250bd968943eec08a8a49e95241438",
+      "bytes": 3428,
+      "redactions": {
+        "emails": 0,
+        "phones": 0,
+        "ids": 0,
+        "secrets": 0
+      }
+    },
+    {
+      "path": "workspace/scripts/subagent-global-status.sh",
+      "source": "workspace",
+      "sha256": "21d51bc77aac431a2a94e54c66a2f7bca6f6977f5010aacd1c8a122f7e302b9c",
+      "bytes": 1712,
+      "redactions": {
+        "emails": 0,
+        "phones": 0,
+        "ids": 0,
+        "secrets": 0
+      }
+    },
+    {
+      "path": "workspace/scripts/subagent-stall-watch.sh",
+      "source": "workspace",
+      "sha256": "8c23072f7ce8bbf445cb265366026cf0e37122fca908a62ef756db72e08395f5",
+      "bytes": 8282,
+      "redactions": {
+        "emails": 0,
+        "phones": 0,
+        "ids": 0,
+        "secrets": 0
+      }
+    },
+    {
+      "path": "workspace/scripts/subagent-status-read.sh",
+      "source": "workspace",
+      "sha256": "12fecb20b8585921cdc5ca9007cafee1ad002e624d42aca2e2527fa4af2a9acf",
+      "bytes": 394,
+      "redactions": {
+        "emails": 0,
+        "phones": 0,
+        "ids": 0,
+        "secrets": 0
+      }
+    },
+    {
+      "path": "workspace/skills/browser-use-via-claude-chrome/SKILL.md",
+      "source": "workspace",
+      "sha256": "053cfc31298e5b8e97746211e57a5a0c9cdd06adc5c7c51f1632fcb1425bcabe",
+      "bytes": 3385,
+      "redactions": {
+        "emails": 0,
+        "phones": 0,
+        "ids": 0,
+        "secrets": 0
+      }
+    },
+    {
+      "path": "workspace/skills/claude-control-skill/SKILL.md",
+      "source": "workspace",
+      "sha256": "d890692f9a191663c990a94236b8cb1f6a3c6f44752031edc79e3b1f2a485e64",
+      "bytes": 1915,
+      "redactions": {
+        "emails": 0,
+        "phones": 0,
+        "ids": 0,
+        "secrets": 0
+      }
+    },
+    {
+      "path": "workspace/skills/claude-relay/SKILL.md",
+      "source": "workspace",
+      "sha256": "0e620eff463895b0f9902baf38963e6bdff73d1b53b324556c9e153906e163eb",
+      "bytes": 2574,
+      "redactions": {
+        "emails": 0,
+        "phones": 0,
+        "ids": 0,
+        "secrets": 0
+      }
+    },
+    {
+      "path": "workspace/skills/outlook-graph-mail/SKILL.md",
+      "source": "workspace",
+      "sha256": "2362e5257dcdc038d475d43aff24ad59dccc5a87b081fb3f1221e7e479e91c7e",
+      "bytes": 2634,
+      "redactions": {
+        "emails": 2,
+        "phones": 0,
+        "ids": 0,
+        "secrets": 0
+      }
+    },
+    {
+      "path": "workspace/skills/perplexity-safe/SKILL.md",
+      "source": "workspace",
+      "sha256": "29715671d5152fa6a0f5be2bb2d83862df0c5fef9fb524c71b4955ed132e95e1",
+      "bytes": 4346,
+      "redactions": {
+        "emails": 0,
+        "phones": 0,
+        "ids": 0,
+        "secrets": 2
+      }
+    },
+    {
+      "path": "workspace/SOUL.md",
+      "source": "workspace",
+      "sha256": "8c67450f6cc1813dfc5ebd11e1b50ab6c5415e4b01c0afbc1c78885887d47f64",
+      "bytes": 3921,
+      "redactions": {
+        "emails": 0,
+        "phones": 0,
+        "ids": 0,
+        "secrets": 0
+      }
+    },
+    {
+      "path": "workspace/TOOLS.md",
+      "source": "workspace",
+      "sha256": "d7e174f58f20a6b4e767ce90e96587b232ed1acf6b8cf23b5ecc102bc4658522",
+      "bytes": 5637,
+      "redactions": {
+        "emails": 7,
+        "phones": 1,
+        "ids": 0,
+        "secrets": 0
+      }
+    },
+    {
+      "path": "workspace/USER.md",
+      "source": "workspace",
+      "sha256": "35efb27854311fb4a7ed9f2dd70f6d6e78e87c6468dfc84e82208bbd98c92802",
+      "bytes": 1542,
+      "redactions": {
+        "emails": 3,
+        "phones": 0,
+        "ids": 0,
+        "secrets": 0
+      }
+    }
+  ],
+  "fileCount": 54,
+  "sha256": "0a1ccf6dca6379b30d4250a551243bb4a167d00badefb14ba9140e5e0b8be5e8"
+}

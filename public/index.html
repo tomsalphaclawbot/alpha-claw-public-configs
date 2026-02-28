@@ -8,17 +8,55 @@
       :root { color-scheme: dark; }
       body { font-family: Inter, system-ui, sans-serif; margin: 2rem; background: #0f1220; color: #e6ebff; }
       .card { background: #161b2f; border: 1px solid #2a3355; border-radius: 10px; padding: 1rem 1.2rem; margin-bottom: 1rem; }
-      h1 { margin-top: 0; }
+      h1, h2, h3 { margin-top: 0; }
       .meta { color: #a8b3d9; font-size: 0.95rem; }
       code { background: #1f2743; padding: 0.1rem 0.35rem; border-radius: 4px; }
       a { color: #8cb6ff; }
       ul { margin-top: 0.5rem; }
+      .grid { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
     </style>
   </head>
   <body>
     <h1>Alpha Claw Public Config Snapshots</h1>
-    <p class="meta">Sanitized, versioned config metadata for public reference. No secrets are included.</p>
-    <p><a href="/api/snapshots">JSON API</a> · <a href="/health">Health</a></p>
+    <p class="meta">
+      Sanitized public exports of the OpenClaw setup powering Alpha. Snapshots intentionally remove logs, memory, session trails, credentials,
+      and identifying values while preserving reproducible docs/config structure.
+    </p>
+    <p>
+      <a href="/api/snapshots">Snapshot API</a> ·
+      <a href="/api/snapshots/latest">Latest Manifest</a> ·
+      <a href="/snapshots/latest/manifest.json">Latest manifest.json</a> ·
+      <a href="/health">Health</a>
+    </p>
+
+    <section class="grid">
+      <article class="card">
+        <h3>Core identity/config docs</h3>
+        <ul>
+          <li><code>AGENTS.md</code> / <code>SOUL.md</code> / <code>IDENTITY.md</code> / <code>USER.md</code></li>
+          <li><code>HEARTBEAT.md</code>, architecture + constitution docs</li>
+          <li>Workspace + config-root safe documentation subsets</li>
+        </ul>
+      </article>
+      <article class="card">
+        <h3>Tools & skills definitions</h3>
+        <ul>
+          <li>Selected operations scripts from <code>workspace/scripts/</code></li>
+          <li><code>workspace/skills/*/SKILL.md</code> definitions</li>
+          <li>OpenClaw shell completions from config root</li>
+        </ul>
+      </article>
+      <article class="card">
+        <h3>Build / deploy / ops docs</h3>
+        <ul>
+          <li>Snapshot build script + machine-readable manifest hashes</li>
+          <li>Versioned snapshot directories under <code>/snapshots/&lt;timestamp&gt;/</code></li>
+          <li><code>/snapshots/latest</code> symlink/copy for stable consumption</li>
+        </ul>
+      </article>
+    </section>
+
+    <h2>Published snapshots</h2>
     <div id="snapshots"></div>
 
     <script>
@@ -26,16 +64,20 @@
         const res = await fetch('/api/snapshots');
         const data = await res.json();
         const target = document.getElementById('snapshots');
+
+        if (!data.snapshots.length) {
+          target.innerHTML = '<p class="meta">No snapshots built yet. Run <code>npm run snapshot:build</code>.</p>';
+          return;
+        }
+
         data.snapshots.forEach((snap) => {
           const el = document.createElement('section');
           el.className = 'card';
           el.innerHTML = `
-            <h2>${snap.version}</h2>
-            <p class="meta">Released: ${new Date(snap.releasedAt).toLocaleString()} · Env: <code>${snap.environment}</code></p>
-            <p>${snap.summary}</p>
-            <strong>Published artifacts</strong>
-            <ul>${snap.files.map((f) => `<li><code>${f}</code></li>`).join('')}</ul>
-            <p class="meta">${snap.notes}</p>
+            <h3>${snap.snapshotId}</h3>
+            <p class="meta">Generated: ${new Date(snap.generatedAt).toLocaleString()} · Files: <code>${snap.fileCount}</code></p>
+            <p>Manifest hash: <code>${snap.sha256}</code></p>
+            <p><a href="${snap.manifestPath}">manifest.json</a> · <a href="${snap.browsePath}">browse files</a></p>
           `;
           target.appendChild(el);
         });
