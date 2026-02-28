@@ -9,7 +9,7 @@ This repo now represents a shareable view of the overall Alpha OpenClaw configur
 Snapshot pipeline (`scripts/build-snapshot.js`) pulls allowlisted content from:
 
 1. `~/.openclaw/workspace`
-   - Core docs: `AGENTS.md`, `SOUL.md`, `IDENTITY.md`, `USER.md`, `TOOLS.md`, `HEARTBEAT.md`, etc.
+   - Core docs: `AGENTS.md`, `SOUL.md`, `IDENTITY.md`, `USER.md`, `TOOLS.md`, `HEARTBEAT.md`, `ARCHITECTURE.md`, etc.
    - `docs/**`
    - `instructions/**`
    - selected operational scripts under `scripts/`
@@ -17,7 +17,8 @@ Snapshot pipeline (`scripts/build-snapshot.js`) pulls allowlisted content from:
 2. `~/.openclaw` config root (safe subset)
    - `README.md`
    - shell completions under `completions/`
-   - safe docs from `workspace-claude/` and `workspace-codex/`
+
+> Note: duplicate doc copies from `workspace-claude/` and `workspace-codex/` are intentionally excluded. Public snapshots use the canonical `workspace/*` docs to avoid confusion.
 
 ## What gets excluded
 

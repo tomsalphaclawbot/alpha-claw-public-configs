@@ -61,18 +61,9 @@ const CONFIG_FILE_ALLOWLIST = [
   'completions/openclaw.ps1'
 ];
 
-const CONFIG_WORKSPACE_DOCS = [
-  'workspace-claude/AGENTS.md',
-  'workspace-claude/SOUL.md',
-  'workspace-claude/IDENTITY.md',
-  'workspace-claude/USER.md',
-  'workspace-claude/TOOLS.md',
-  'workspace-codex/AGENTS.md',
-  'workspace-codex/SOUL.md',
-  'workspace-codex/IDENTITY.md',
-  'workspace-codex/USER.md',
-  'workspace-codex/TOOLS.md'
-];
+// Intentionally excluded: config/workspace-claude and config/workspace-codex
+// to avoid duplicate persona docs in public snapshots.
+const CONFIG_WORKSPACE_DOCS = [];
 
 function ensureDir(dir) {
   fs.mkdirSync(dir, { recursive: true });
@@ -212,7 +203,8 @@ function main() {
         workspaceDirs: ['docs/**', 'instructions/**', 'skills/*/SKILL.md'],
         workspaceScripts: WORKSPACE_SCRIPT_ALLOWLIST,
         configFiles: CONFIG_FILE_ALLOWLIST,
-        configWorkspaceDocs: CONFIG_WORKSPACE_DOCS
+        configWorkspaceDocs: CONFIG_WORKSPACE_DOCS,
+        note: 'Canonical workspace docs come from workspace/*; duplicate workspace-claude/workspace-codex docs are excluded.'
       },
       exclude: [
         'memory/**',
