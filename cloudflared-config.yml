@@ -1,0 +1,6 @@
+tunnel: e6a51b1a-94f0-4517-9dbf-98d422e00919
+credentials-file: /etc/cloudflared/creds.json
+ingress:
+  - hostname: configs.tomsalphaclawbot.work
+    service: http://alpha-claw-public-configs:8080
+  - service: http_status:404

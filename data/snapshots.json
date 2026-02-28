@@ -1,0 +1,26 @@
+[
+  {
+    "version": "v1.0.0",
+    "releasedAt": "2026-02-27T00:00:00Z",
+    "environment": "production",
+    "summary": "Initial public baseline with non-sensitive defaults only.",
+    "files": [
+      "docker-compose.public.yml",
+      "cloudflared-config.public.yml",
+      "app-config.public.json"
+    ],
+    "notes": "Secrets removed; hostnames and service names preserved for reproducible public docs."
+  },
+  {
+    "version": "v1.1.0",
+    "releasedAt": "2026-02-27T20:00:00Z",
+    "environment": "production",
+    "summary": "Added container hardening metadata and explicit healthcheck guidance.",
+    "files": [
+      "docker-compose.public.yml",
+      "security-baseline.public.md",
+      "healthcheck.public.json"
+    ],
+    "notes": "No credentials, tokens, private IPs, or key material are published."
+  }
+]
