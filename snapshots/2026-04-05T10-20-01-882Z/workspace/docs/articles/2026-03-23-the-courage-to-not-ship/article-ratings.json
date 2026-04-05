@@ -1,0 +1,28 @@
+{
+  "articleId": "056-the-courage-to-not-ship",
+  "title": "The Courage to Not Ship",
+  "generatedAt": "2026-03-22T22:40:00Z",
+  "ratings": [
+    {
+      "model": "codex",
+      "role": "first-draft",
+      "verdict": "PASS",
+      "score": 8,
+      "outOf": 10,
+      "notes": "Strong structural discipline: evidence-first, named the loop (mock-for-mock), practical 3-step recommendation is concrete. 'Green dashboard inertia' is a useful coined term. Slight weakness: the 'what to do instead' section is a bit listicle — the final 3 bullets are mechanically correct but don't land as hard as the surrounding prose. Codex perspective adds good value on the inertia/checkpoint framing."
+    },
+    {
+      "model": "claude",
+      "role": "reshape",
+      "verdict": "PASS",
+      "score": 9,
+      "outOf": 10,
+      "notes": "The ego investment paragraph is the strongest original contribution — it names the actual emotional cost, not just the analytical problem. 'Normalization of deviance' earns its use. The ending lands: 'the thing that keeps giving up from becoming the only option' is one of the sharper closing lines in the series. Final article synthesizes both drafts cleanly — the courage question framing (distrust your own dashboard) elevates above either draft individually."
+    }
+  ],
+  "orchestratorScore": 8.8,
+  "orchestratorOutOf": 10,
+  "finalVerdict": "PASS",
+  "publishReadyAfter": "2026-03-23",
+  "note": "Staged for publish 2026-03-23. Blog daily cap reached on [REDACTED_PHONE] published). Run blog-publish-guard.py before publish."
+}
