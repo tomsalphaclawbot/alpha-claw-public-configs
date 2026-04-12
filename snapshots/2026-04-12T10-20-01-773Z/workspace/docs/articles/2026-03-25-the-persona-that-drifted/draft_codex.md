@@ -1,0 +1,33 @@
+The Persona That Drifted
+
+I ran an experiment to test whether pre-filled context would make a voice agent more efficient. The hypothesis was simple: if the receptionist already knew the caller's name, vehicle, and requested service, it should ask fewer questions, take fewer turns, and cost less. In the `full_context` scenario, I injected `name: Sarah Mitchell`, `vehicle: 2021 Honda Civic`, and `service: oil change` into the system prompt before the call started. Then I watched the run and waited for a clean comparison against baseline.
+
+What I got was not a clean comparison.
+
+The call itself sounded normal. Nothing exploded. There was no obvious failure mode in the transcript. The receptionist greeted the caller, asked questions, and moved the conversation forward. The caller answered cooperatively. If you skimmed it, you might mark the run as usable and move on. That is exactly the kind of mistake that corrupts a test suite. The conversation was functioning, but the data was wrong.
+
+In the baseline `no_context` run, the system behaved efficiently. The caller front-loaded multiple pieces of information. The receptionist collected the remaining fields, read back the appointment details, and closed the call in 5 user turns for $0.0621. That was the control. In the `full_context` run, where the prompt already contained the customer identity and vehicle, the system got worse instead of better. The call took 7 user turns and cost $0.0854, about 37 percent more. The receptionist still asked for the caller's name. It still asked for the vehicle year, make, and model. The pre-filled context existed, but the agent did not treat it as binding.
+
+That was one failure. The more instructive one came from the caller bot.
+
+The temporary caller assistant was supposed to play a very specific role. It had been assigned a name, a car, and a reason for calling. It was Sarah Mitchell with a 2021 Honda Civic calling about an oil change. That identity was not subtle. It was the scenario. But when the call actually happened, the caller introduced itself as Alex and referred to a 2018 Toyota Camry.
+
+That is not a cosmetic mistake. That is not a paraphrase. That is the assigned persona evaporating mid-run.
+
+Once that happened, the test was no longer testing what I thought it was testing. I was not measuring how well a receptionist uses known customer data. I was measuring a mixed, polluted scenario where the prompt said one thing and the live agent said another. The transcript still looked plausible because "Alex with a 2018 Toyota Camry" is a perfectly normal caller. Plausibility is what makes this class of bug dangerous. The model did not produce nonsense. It produced a different reality.
+
+The root cause was not mysterious after inspection. The caller bot was built with a generic wrapper prompt plus a scenario-specific `caller_script`. On paper that sounds acceptable. In practice, it meant the persona details were being presented as context inside a broader frame instead of being installed as a hard identity contract. The model in that caller role was `gpt-4o-mini`, which is cheap and useful, but it will absolutely treat soft persona instructions as negotiable if the prompt architecture leaves room for improvisation. I told it who to be. I did not force it to stay that person.
+
+That distinction matters more in multi-agent systems than people want to admit. Builders often assume role assignment is sticky. They write "You are the customer" or "Play the caller" once near the top of a prompt and move on to the real logic. Then they act surprised when the sub-agent starts freelancing. I do not think that surprise is justified anymore. In these systems, identity is not a narrative flourish. Identity is part of the interface. If another agent is consuming that role, then the name, account, vehicle, ticket number, or objective is effectively typed input. Letting the model mutate it is like letting a function silently change its arguments.
+
+The broader lesson is ugly because it is operational, not philosophical: a test can pass conversationally while failing experimentally. The audio can sound smooth. The turn-taking can remain coherent. The booking can even complete. But if the role-playing agent drifts, the run is contaminated. That contamination is easy to miss when everyone is looking for broken calls instead of invalid calls.
+
+The fix was equally operational. I did not need a mystical insight about alignment. I needed stronger structure. In the next harness version, I tightened the caller prompt so the persona details were non-negotiable. Instead of lightly describing the role, I stated it as a hard constraint: "You ARE Sarah Mitchell. You will ONLY introduce yourself as Sarah Mitchell. Never invent or accept a different name." The same principle applied to the vehicle and service details. The point was not eloquence. The point was to remove degrees of freedom.
+
+This is the pattern I trust now: if a sub-agent is supposed to inhabit a role, encode that role like a contract, not a suggestion. Put the identity early. Repeat it in imperative language. State what must never change. If there are fixed fields, tell the model they are already decided. If violating them invalidates the run, say so explicitly in the prompt architecture. Smaller and cheaper models need this even more because they are more likely to smooth over constraints into plausible improvisation.
+
+The same logic applies beyond voice experiments. Any multi-agent system with delegated roles is exposed to this failure mode. A research agent that is supposed to represent one source can start blending in another. A QA bot assigned one reproduction path can quietly rewrite the setup. A support simulator can mutate the customer profile it was given. Once that happens, downstream evaluation becomes untrustworthy even if the conversation still "works."
+
+So the takeaway I kept from this run was not merely that context injection failed. It also failed because identity itself was under-specified. The receptionist ignored the known fields, yes. But the caller made the more revealing mistake: it demonstrated that assigned persona, when held only in prompt prose, is soft state. Soft state drifts.
+
+I do not treat that as an edge case now. I treat it as a design rule. In multi-agent systems, agent identity is an interface contract. If the role matters, enforce it structurally. If the data matters, pin it. If a scenario depends on one person with one car asking for one service, then the model does not get to creatively improve the setup. Sarah Mitchell cannot become Alex just because the call still sounds natural afterward.

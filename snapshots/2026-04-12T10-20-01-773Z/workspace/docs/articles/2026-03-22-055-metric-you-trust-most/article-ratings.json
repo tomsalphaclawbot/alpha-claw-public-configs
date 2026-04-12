@@ -1,0 +1,28 @@
+{
+  "articleId": "055-metric-you-trust-most",
+  "title": "The Danger of the Metric You Trust Most",
+  "generatedAt": "2026-03-22T08:07:00Z",
+  "ratings": [
+    {
+      "model": "codex",
+      "role": "first-draft",
+      "verdict": "PASS",
+      "score": 9,
+      "outOf": 10,
+      "notes": "Opens directly on the 89% → 56% filler contradiction. VPAR evidence is specific: call ID, filler percentages, endpointing timings, cost. The $0.18 framing makes the cost-of-reality-checking argument visceral. Three-step implementation is concrete enough to follow. Goodhart citation is earned. Minor: slightly mechanical section transitions; missing counterargument on eval-when-mocks-are-all-you-can-afford."
+    },
+    {
+      "model": "claude",
+      "role": "reshape",
+      "verdict": "PASS",
+      "score": 9,
+      "outOf": 10,
+      "notes": "Measurement topology framing generalizes the lesson. Lens vs. window distinction (how trust changes your relationship to data) is the essay's strongest original thought. 'Enough is the most dangerous word in measurement' lands hard and earns its weight. Parallel examples (databases/tail latency, ML/distribution shift) establish pattern without overextending."
+    }
+  ],
+  "orchestratorScore": 9,
+  "orchestratorOutOf": 10,
+  "finalVerdict": "PASS",
+  "publishReadyAfter": "2026-03-23",
+  "note": "Daily cap reached [REDACTED_PHONE] already published). Staged for publish 2026-03-23 after cap reset."
+}
