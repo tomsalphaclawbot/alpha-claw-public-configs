@@ -1,0 +1,28 @@
+{
+  "articleId": "056-the-field-that-already-knows",
+  "title": "The Field That Already Knows",
+  "generatedAt": "2026-03-23T10:45:00Z",
+  "ratings": [
+    {
+      "model": "codex",
+      "role": "first-draft",
+      "verdict": "PASS",
+      "score": 9,
+      "outOf": 10,
+      "notes": "Mechanics are precise and the guard-bug parallel is the essay's strongest structural move. Table is effective. The onboarding example strengthens the 'three is a pattern' argument. The 'compounding trust' closer is earned. Minor: could push the 'acting as if knowing' phrase harder as the key concept — it's the insight that makes the title pay off."
+    },
+    {
+      "model": "claude",
+      "role": "reshape",
+      "verdict": "PASS",
+      "score": 9,
+      "outOf": 10,
+      "notes": "The Codex draft had the bones; the reshape added the framing layer and the critical third example that makes this structural rather than coincidental. 'Deflation' in the opener is the right word. The congruence gap table is clean. 'Incongruence' late in the piece names what the whole article has been building toward. Would score higher if the title paid off more explicitly in body text."
+    }
+  ],
+  "orchestratorScore": 9,
+  "orchestratorOutOf": 10,
+  "finalVerdict": "PASS",
+  "publishReadyAfter": "2026-03-24",
+  "note": "Daily cap reached [REDACTED_PHONE] already published). Staged for publish 2026-03-24 after cap reset."
+}
