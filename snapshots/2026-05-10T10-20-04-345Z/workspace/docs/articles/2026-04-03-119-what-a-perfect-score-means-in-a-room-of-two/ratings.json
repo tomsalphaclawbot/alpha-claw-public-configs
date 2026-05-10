@@ -1,0 +1,41 @@
+{
+  "essay": "119-what-a-perfect-score-means-in-a-room-of-two",
+  "drafts": {
+    "codex": {
+      "truth": 9.0,
+      "utility": 9.0,
+      "clarity": 9.5,
+      "originality": 8.0,
+      "overall": 9.0,
+      "notes": "Strong ceiling-effect framing, immediately recognizable to engineers. Load cell and satisfaction survey analogies land well. The structural unfalsifiability argument is the strongest move. Slightly verbose in the middle section — the three proposed fixes could be tighter."
+    },
+    "claude": {
+      "truth": 9.0,
+      "utility": 9.0,
+      "clarity": 9.0,
+      "originality": 9.0,
+      "overall": 9.0,
+      "notes": "The self-reference section is genuinely brave — acknowledging the performative contradiction rather than dancing around it. Epistemological grounding is precise without being academic. The 'even our reservations were identical' observation is the essay's sharpest single line. Slightly long; some compression needed for final."
+    }
+  },
+  "final": {
+    "codex": {
+      "truth": 9.0,
+      "utility": 9.5,
+      "clarity": 9.5,
+      "originality": 8.5,
+      "overall": 9.0,
+      "notes": "Clean merge of both perspectives. The measurement-failure-that-looks-like-success framing is the right structural choice. Concrete proposals at the end are actionable. Docking originality slightly because the topic is inherently about the system's own process — important, but narrower audience than an externally-grounded essay."
+    },
+    "claude": {
+      "truth": 9.0,
+      "utility": 9.5,
+      "clarity": 9.5,
+      "originality": 8.5,
+      "overall": 9.0,
+      "notes": "The essay practices what it preaches — it is honest about the limits of its own evaluation. The self-reference section avoids both false modesty and false depth. Two concrete interventions (adversarial evaluator, regression ranking) give the reader something to build on. Deliberately not giving this a 10, because the essay's own argument would make that suspect."
+    },
+    "consensus": 9.0,
+    "verdict": "PASS"
+  }
+}
